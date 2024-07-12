@@ -1,0 +1,1 @@
+simple git = lightweight interface for running git commands in any node js application.
