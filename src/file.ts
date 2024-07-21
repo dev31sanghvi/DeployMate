@@ -7,7 +7,8 @@ export const getAllFiles=(folderPath:string)=>{
 
     let response :string[]=[];
  //readdirSync fn gives you all the files in the current folder (can't give recursive files)
-const allFilesAndFolder=fs.readdirSync(folderPath);
+//this function will give you all the files and folders in the current folder
+ const allFilesAndFolder=fs.readdirSync(folderPath);
 
 allFilesAndFolder.forEach(file => {
 
