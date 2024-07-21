@@ -1,5 +1,5 @@
 //getting the path
-// weneed path of all the files present in the directory
+// we need path of all the files present in the directory
 import fs from "fs"
 import path from "path"
 
