@@ -5,6 +5,7 @@ import simpleGit from "simple-git";
 import { generate } from "./generate";
 import path from "path"
 import { getAllFiles } from "./file";
+import { uploadFile } from "./aws";
 
 
 // can get the absolute path from __dirname
@@ -21,6 +22,11 @@ app.post("/deploy",async(req,res)=>{
     await simpleGit().clone(repoUrl, path.join(__dirname,`output/${id}` ));
 
     const files=getAllFiles(path.join(__dirname,`output/${id}`));
+
+    
+    files.forEach(async file => {
+        await uploadFile(file.slice(__dirname.length + 1), file);
+    })
 
 
     res.json({
