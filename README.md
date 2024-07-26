@@ -4,6 +4,10 @@ Tech Stack : react js , node js , express js , aws , simple git , redis , pubsub
 
 steps to run :-
 
+add your secrets in env file:-
+AWS_ACCESS_KEY_ID=""
+AWS_SECRET_ACCESS_KEY= ""
+
 first install typescrript it not already install
 go to tsconfig.json -> then change ( "rootDir": "./src", ) amd outdir to "./dist"
 then run (tsc -b ) to compile your ts code
