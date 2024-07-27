@@ -8,5 +8,6 @@ add your secrets in env file:-
 AWS_ACCESS_KEY_ID=""
 AWS_SECRET_ACCESS_KEY= ""
 
+for first principle architecture : https://drive.google.com/drive/folders/1i5u-6bymZzcwNRtdZXvfyYfNRzww3FuI?usp=sharing
 
 
