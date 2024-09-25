@@ -1,0 +1,66 @@
+{
+    "env": {
+      "browser": true,
+      "es2021": true,
+      "node": true
+    },
+    "extends": [
+      "eslint:recommended",
+      "plugin:react/recommended",
+      "plugin:@typescript-eslint/recommended",
+      "prettier"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "project": "./tsconfig.json",
+      "ecmaVersion": 12,
+      "sourceType": "module"
+    },
+    "plugins": [
+      "react",
+      "@typescript-eslint"
+    ],
+    "settings": {
+      "react": {
+        "version": "detect"
+      }
+    },
+    "rules": {
+      "@typescript-eslint/no-unused-vars": ["warn", { "argsIgnorePattern": "^_" }],
+      "@typescript-eslint/explicit-module-boundary-types": "off",
+      "@typescript-eslint/no-explicit-any": "warn",
+      "@typescript-eslint/consistent-type-definitions": ["error", "interface"],
+      "@typescript-eslint/ban-types": [
+        "error",
+        {
+          "types": {
+            "Object": "Use {} or object instead.",
+            "String": "Use string instead.",
+            "Boolean": "Use boolean instead.",
+            "Number": "Use number instead."
+          }
+        }
+      ],
+      "react/react-in-jsx-scope": "off",
+      "react/jsx-uses-react": "off",
+      "react/prop-types": "off",
+      "no-console": "warn",
+      "no-debugger": "error",
+      "eqeqeq": ["error", "always"],
+      "curly": ["error", "all"],
+      "no-unused-expressions": "error",
+      "prefer-const": "error",
+      "arrow-body-style": ["error", "as-needed"],
+      "no-var": "error",
+      "prefer-template": "error",
+      "prettier/prettier": [
+        "error",
+        {
+          "singleQuote": true,
+          "trailingComma": "es5",
+          "semi": true,
+          "printWidth": 80
+        }
+      ]
+    }
+  }
