@@ -10,4 +10,7 @@ AWS_SECRET_ACCESS_KEY= ""
 
 for first principle architecture : https://drive.google.com/drive/folders/1i5u-6bymZzcwNRtdZXvfyYfNRzww3FuI?usp=sharing
 
+[sudo systemctl start redis-server] -> command for starting the redis server
 
+[sudo systemctl status redis-server
+] -> command to verify if it is running or not
