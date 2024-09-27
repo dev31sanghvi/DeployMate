@@ -14,3 +14,5 @@ for first principle architecture : https://drive.google.com/drive/folders/1i5u-6
 
 [sudo systemctl status redis-server
 ] -> command to verify if it is running or not
+
+command to build the react code -> [cd ./output/epwic/&& npm install && npm run build] // this will move to output folder and in that epwic folder and then it will run both the commands to build the react code .

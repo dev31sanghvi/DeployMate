@@ -1,5 +1,6 @@
 import { createClient, commandOptions } from 'redis';
 import { downloadFolderS3 } from './aws';
+import { generateProjectBuild } from './utils';
 // import { copyFinalDist, downloadS3Folder } from "./aws";
 // import { buildProject } from "./utils";
 
@@ -21,6 +22,7 @@ async function main() {
     //@ts-ignore
     const id = res.element;
     await downloadFolderS3(`/output/${id}`); // this will be the folder that will be pulled from S3
+    await generateProjectBuild(id); // this will build the project
   }
 }
 //calling main function
