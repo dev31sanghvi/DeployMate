@@ -1,3 +1,4 @@
+import { createClient } from 'redis';
 // import { path } from 'path';
 import express from "express";
 import cors from "cors";
@@ -7,6 +8,13 @@ import path from "path"
 import { getAllFiles } from "./file";
 import { uploadFile } from "./aws";
 
+const publisher = createClient();
+publisher.connect();
+
+
+const subscriber = createClient();
+subscriber.connect();
+// uploadFile("dev/package.json","/home/dev/Desktop/major project/deploymate/dist")
 
 // can get the absolute path from __dirname
 console.log(__dirname);
@@ -28,9 +36,23 @@ app.post("/deploy",async(req,res)=>{
         await uploadFile(file.slice(__dirname.length + 1), file);
     })
 
+    await new Promise((resolve) => setTimeout(resolve, 5000))
+    publisher.lPush("build-queue",id);
+
+    publisher.hSet("status", id, "uploaded");
 
     res.json({
         id:id
+    })
+
+
+// this is the status endpoint
+    app.get("/status", async (req, res)=>{
+        const id=req.query.id;
+        const response=await subscriber.hGet("status",id as string);
+        res.json({
+            status:response
+        })
     })
 })
 

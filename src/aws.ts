@@ -7,9 +7,9 @@ import dotenv from "dotenv";
 dotenv.config();
 const s3 = new S3({
   // region: "us-east-1",
-  accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-  secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
-  endpoint: "endpoint url ",
+  accessKeyId:"8c106480280dbab1fbbd84485d49ae93" ,
+  secretAccessKey:"dfc9b647cd564e5e05a10795cb643fd8e8949468105c7dc48fbb1ff9d29acb38" ,
+  endpoint: "https://bcef9be73571b9a544edacebaef06318.r2.cloudflarestorage.com/",
 });
 
 // there will be an output folder in the root directory
