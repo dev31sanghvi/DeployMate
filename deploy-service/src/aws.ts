@@ -14,7 +14,7 @@ export async function downloadFolderS3(prefix: string) {
   const allFiles = await s3
     .listObjectsV2({
       // download all files from s3 bucket
-      Bucket: 'deploy-service',
+      Bucket: 'deploymate',
       Prefix: prefix,
     })
     .promise();
@@ -34,7 +34,7 @@ export async function downloadFolderS3(prefix: string) {
           fs.mkdirSync(dirName, { recursive: true });
         }
         s3.getObject({
-          Bucket: 'vercel',
+          Bucket: 'deploymate',
           Key,
         })
           .createReadStream()
