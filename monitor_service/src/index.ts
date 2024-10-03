@@ -24,7 +24,7 @@ async function createMonitor() {
     }
 }
 
-async function checkStatusByUrl() {
+async function monitorSummary() {
     try {
         const response = await axios.get('https://uptime.betterstack.com/api/v2/monitors', {
             params: {
@@ -65,6 +65,17 @@ async function checkStatusByUrl() {
             
         }
 
+        const summary = await axios.get(`https://uptime.betterstack.com/api/v2/monitors/${response.data.data[0].id}/sla`, {
+            params: {
+                monitor_id: response.data.data[0].id
+            },
+            headers: {
+                'Authorization': `Bearer ${API_KEY}`,
+                'Content-Type': 'application/json'
+            }
+        });
+
+        console.log('incidents of monitor:', summary.data.data.attributes);
 
     } catch (error:any) {
         if (error.response) {
@@ -76,4 +87,4 @@ async function checkStatusByUrl() {
 }
 
 createMonitor();
-// checkStatusByUrl();
+// monitorSummary();
