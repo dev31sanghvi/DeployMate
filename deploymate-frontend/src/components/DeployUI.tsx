@@ -25,39 +25,39 @@ const DeployUI: React.FC = () => {
 
     setTimeout(() => {
       console.log(' Uploading files to S3...');
-    }, 1000);
-
-    setTimeout(() => {
-      console.log('Retrieving files from S3 for build...');
-    }, 2000);
-
-    setTimeout(() => {
-      console.log(' Setting up build environment (installing dependencies)...');
     }, 3000);
 
     setTimeout(() => {
+      console.log('Retrieving files from S3 for build...');
+    }, 1000);
+
+    setTimeout(() => {
+      console.log(' Setting up build environment (installing dependencies)...');
+    }, 2000);
+
+    setTimeout(() => {
       console.log(' Running build script...');
-    }, 4000);
+    }, 1000);
 
     setTimeout(() => {
       console.log(' Packaging application...');
-    }, 5000);
+    }, 8000);
 
     setTimeout(() => {
       console.log(' Deploying application to server...');
-    }, 6000);
+    }, 8000);
 
     setTimeout(() => {
       console.log(' Finalizing deployment and running post-deploy tasks...');
     }, 7000);
 
     setTimeout(() => {
-      const deploymentLink = 'https://devsanghvi.me';
+      const deploymentLink = 'https://testing-repo-lemon.vercel.app/';
       setDeployLink(deploymentLink);
       setDeploying(false);
 
       console.log(`Deployment Successful! Your project is deployed at: ${deploymentLink}`);
-      console.log('--- Complex Deployment Process Completed ---');
+  
     }, 8000);
   };
 
