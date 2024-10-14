@@ -36,7 +36,7 @@ async function monitorSummary() {
             }
         });
 
-        console.log('Filtered monitors:', response.data.data[0].attributes.status); 
+        console.log('Filtered monitors:', response.data.data[0].attributes.status);
 
         if(response.data.data[0].attributes.status === 'down')
         {
@@ -52,7 +52,7 @@ async function monitorSummary() {
                 });
 
                 console.log('incidents of monitor:', incidents.data.data[0].attributes.cause);
-                
+
             }
 
                 catch (error:any){
@@ -62,7 +62,7 @@ async function monitorSummary() {
                         console.error('Error incident monitors:', error.message);
                     }
                 }
-            
+
         }
 
         const summary = await axios.get(`https://uptime.betterstack.com/api/v2/monitors/${response.data.data[0].id}/sla`, {
